@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text} from 'react-native';
+import { Platform } from 'react-native';
 
 import { Background,
           Container,
@@ -21,7 +21,7 @@ export default function SignIn() {
   return (
     <Background>
       
-      <Container>
+      <Container behavior={Platform.OS === 'ios' ? 'padding': ''} enabled>
 
         <Logo source={require('../../assets/logo.png')}/>
 

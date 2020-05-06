@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 import LinearGradient  from 'react-native-linear-gradient'
 
-
 export const Background = styled(LinearGradient).attrs({
     colors: ['#262630', '#1b2d4e']
 })`
@@ -9,7 +8,7 @@ export const Background = styled(LinearGradient).attrs({
 
 `;
 
-export const Container = styled.View`
+export const Container = styled.KeyboardAvoidingView`
     flex: 1;
     align-items: center;
     justify-content: center;
@@ -56,5 +55,6 @@ export const SignUpLink = styled.TouchableOpacity`
 
 export const SignUpText = styled.Text`
     color: #FFF;
+    padding-bottom: 13px;
 
 `;
