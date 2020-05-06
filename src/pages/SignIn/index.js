@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Platform } from 'react-native';
+import firebase from '../../services/firebase';
 
 import { Background,
           Container,
@@ -18,6 +19,15 @@ export default function SignIn({ navigation }) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  async function handleSubmit(){
+    if (email !== '' && password !==''){
+      await firebase.auth().signInWithEmailAndPassword(email,password)
+      .catch((error)=>{
+        alert((error.code))
+      })
+    }
+  }
   return (
     <Background>
       
@@ -55,7 +65,7 @@ export default function SignIn({ navigation }) {
         </AreaInput>
 
 
-        <SubmitButton onPress={()=>{}}>
+        <SubmitButton onPress={handleSubmit}>
 
           <SubmitText>Acessar</SubmitText>
         </SubmitButton>
