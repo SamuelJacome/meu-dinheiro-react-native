@@ -14,7 +14,7 @@ import { Background,
 
 } from './styles';
 
-export default function SignIn() {
+export default function SignIn({ navigation }) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -41,7 +41,7 @@ export default function SignIn() {
         <AreaInput>
 
         <Input
-            placeholder="Email"
+            placeholder="Password"
             autoCorrect={false}
             autoCapitalize="none"
             secureTextEntry={true}
@@ -61,7 +61,7 @@ export default function SignIn() {
         </SubmitButton>
 
 
-        <SignUpLink onPress={()=>{}}>
+        <SignUpLink onPress={()=>navigation.navigate('SignUp')}>
           <SignUpText>Criar Conta Gratuita</SignUpText>
         </SignUpLink>
 
