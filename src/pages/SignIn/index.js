@@ -24,7 +24,7 @@ export default function SignIn({ navigation }) {
     if (email !== '' && password !==''){
       await firebase.auth().signInWithEmailAndPassword(email,password)
       .catch((error)=>{
-        alert((error.code))
+        alert((error.code));
       })
     }
   }
